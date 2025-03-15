@@ -48,6 +48,12 @@ Graph::~Graph() {}
  */
 void Graph::addEdge(int u, int v)
 {
+    if ((u < 0) || (u >= verticles))
+        throw std::out_of_range("U vertex is out of range");
+    
+    if ((v < 0) || (v >= verticles))
+        throw std::out_of_range("V vertex is out of range");
+
     adjacenyList[u].push_back(v);
     adjacenyList[v].push_back(u);
 }
@@ -145,6 +151,11 @@ void Graph::printGraph() const
 std::vector<int> Graph::findShortestWays(int st) const
 {
     if (st == -1) st = start_vertex;
+
+    if ((st < 0) || (st >= verticles))
+    {
+        throw std::out_of_range("Start vertex is out of range");
+    }
 
     std::vector<int> distances(verticles, -1);
     std::queue<int> q;

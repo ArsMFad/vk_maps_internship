@@ -1,3 +1,8 @@
+/*!
+* @file
+* @brief Tests for graph
+*/
+
 #include <gtest/gtest.h>
 #include "../include/graph.h"
 
