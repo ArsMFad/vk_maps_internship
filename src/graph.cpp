@@ -18,7 +18,7 @@
  *
  *
  */
-Graph::Graph() : verticles(0), start_vertex(-1), adjacenyList(0) {}
+Graph::Graph() : verticles( 0 ), start_vertex( -1 ), adjacenyList( 0 ) {}
 
 
 /**
@@ -27,7 +27,7 @@ Graph::Graph() : verticles(0), start_vertex(-1), adjacenyList(0) {}
  * @param v verticles
  *
  */
-Graph::Graph(int v) : verticles(v), start_vertex(-1), adjacenyList(v) {}
+Graph::Graph( int v ) : verticles( v ), start_vertex( -1 ), adjacenyList( v ) {}
 
 
 /**
@@ -46,16 +46,16 @@ Graph::~Graph() {}
  * @param v vertex
  *
  */
-void Graph::addEdge(int u, int v)
+void Graph::addEdge( int u, int v )
 {
-    if ((u < 0) || (u >= verticles))
+    if(( u < 0 ) || ( u >= verticles ))
         throw std::out_of_range("U vertex is out of range");
     
-    if ((v < 0) || (v >= verticles))
+    if(( v < 0 ) || ( v >= verticles ))
         throw std::out_of_range("V vertex is out of range");
 
-    adjacenyList[u].push_back(v);
-    adjacenyList[v].push_back(u);
+    adjacenyList[u].push_back( v );
+    adjacenyList[v].push_back( u );
 }
 
 
@@ -68,10 +68,10 @@ void Graph::addEdge(int u, int v)
  * @param filename filename for graph input
  *
  */
-void Graph::getFromFileWithStartVertex(const std::string& filename)
+void Graph::getFromFileWithStartVertex( const std::string& filename )
 {
-    std::ifstream input(filename);
-    if (!input.is_open())
+    std::ifstream input( filename );
+    if( !input.is_open() )
         throw std::runtime_error("Failed to open file");
 
     int edges;
@@ -79,11 +79,11 @@ void Graph::getFromFileWithStartVertex(const std::string& filename)
 
     adjacenyList.resize(verticles);
 
-    while(edges--)
+    while( edges-- )
     {
         int u, v;
         input >> u >> v;
-        addEdge(u, v);
+        addEdge( u, v );
     }
 
     input >> start_vertex;
@@ -99,7 +99,7 @@ void Graph::getFromFileWithStartVertex(const std::string& filename)
  * @return adjacency list row
  *
  */
-std::vector<int> Graph::getNeighbors(int v) const
+std::vector< int > Graph::getNeighbors( int v ) const
 {
     return adjacenyList[v];
 }
@@ -127,10 +127,10 @@ int Graph::getStartVertex() const
  */
 void Graph::printGraph() const
 {
-    for (int i = 0; i < verticles; i++)
+    for( int i = 0; i < verticles; i++ )
     {
         std::cout << "Verticle " << i << " is connected with: ";
-        for (int j : adjacenyList[i])
+        for( int j : adjacenyList[i] )
         {
             std::cout << j << " ";
         }
@@ -148,32 +148,30 @@ void Graph::printGraph() const
  * @return vector of distances
  *
  */
-std::vector<int> Graph::findShortestWays(int st) const
+std::vector< int > Graph::findShortestWays( int st ) const
 {
-    if (st == -1) st = start_vertex;
+    if( st == -1 ) st = start_vertex;
 
-    if ((st < 0) || (st >= verticles))
-    {
+    if(( st < 0 ) || ( st >= verticles ))
         throw std::out_of_range("Start vertex is out of range");
-    }
 
-    std::vector<int> distances(verticles, -1);
-    std::queue<int> q;
+    std::vector< int > distances( verticles, -1 );
+    std::queue< int > q;
 
-    q.push(st);
-    distances[st] = 0;
+    q.push( st );
+    distances[ st ] = 0;
 
-    while(!q.empty())
+    while( !q.empty() )
     {
         int current = q.front();
         q.pop();
 
-        for (int neighbor : adjacenyList[current])
+        for( int neighbor : adjacenyList[ current ] )
         {
-            if (distances[neighbor] == -1)
+            if( distances[ neighbor ] == -1 )
             {
-                distances[neighbor] = distances[current] + 1;
-                q.push(neighbor);
+                distances[ neighbor ] = distances[ current ] + 1;
+                q.push( neighbor );
             }
         }
     }
