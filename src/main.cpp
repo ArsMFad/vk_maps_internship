@@ -10,10 +10,17 @@ int main(int argc, char *argv[])
 
     const std::string filename = argv[1];
 
-    std::cout << argv[1] << std::endl;
     Graph g(0);
     g.getFromFile(filename);
-    g.printGraph();
+
+    std::vector<int> d = g.findShortestWays(-1);
+
+    for (int i = 0; i < d.size(); i++)
+    {
+        std::cout << d[i] << " ";
+    }
+    std::cout << "\n";
     
+
     return 0;
 }

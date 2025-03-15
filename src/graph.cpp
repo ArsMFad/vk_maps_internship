@@ -6,10 +6,10 @@
 #include <queue>
 
 
-Graph::Graph() : verticles(0), adjacenyList(0) {}
+Graph::Graph() : verticles(0), start_vertex(-1), adjacenyList(0) {}
 
 
-Graph::Graph(int v) : verticles(v), adjacenyList(v) {}
+Graph::Graph(int v) : verticles(v), start_vertex(-1), adjacenyList(v) {}
 
 
 Graph::~Graph() {}
@@ -39,6 +39,8 @@ void Graph::getFromFile(const std::string& filename)
         input >> u >> v;
         addEdge(u, v);
     }
+
+    input >> start_vertex;
 }
 
 
@@ -46,7 +48,7 @@ void Graph::printGraph() const
 {
     for (int i = 0; i < verticles; i++)
     {
-        std::cout << "Verticle " << i << ": ";
+        std::cout << "Verticle " << i << " is connected with: ";
         for (int j : adjacenyList[i])
         {
             std::cout << j << " ";
@@ -56,10 +58,15 @@ void Graph::printGraph() const
 }
 
 
-std::vector<int> Graph::bfs(int st) const
+std::vector<int> Graph::findShortestWays(int st) const
 {
+    if (st == -1) st = start_vertex;
+
     std::vector<int> distances(verticles, -1);
     std::queue<int> q;
+
+    q.push(st);
+    distances[st] = 0;
 
     while(!q.empty())
     {
