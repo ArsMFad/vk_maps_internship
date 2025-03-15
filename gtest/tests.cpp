@@ -20,7 +20,7 @@ TEST(GraphTest, AddEdgeTest)
 }
 
 
-TEST(GraphTest, ReadFromFileTest)
+TEST(GraphTest, getFromFileTest)
 {
     Graph g(0);
     g.getFromFileWithStartVertex("graph.txt");
