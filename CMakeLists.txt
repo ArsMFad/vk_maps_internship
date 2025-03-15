@@ -8,4 +8,4 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c++17 -Wall -Wextra -Iinclude")
 set(include_dest "include/")
 
 add_subdirectory(src)
-add_subdirectory(test)
+add_subdirectory(gtest)
