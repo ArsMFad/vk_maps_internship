@@ -4,6 +4,7 @@
 #include <fstream>
 #include <stdexcept>
 #include <queue>
+#include <vector>
 
 
 Graph::Graph() : verticles(0), start_vertex(-1), adjacenyList(0) {}

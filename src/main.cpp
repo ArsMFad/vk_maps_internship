@@ -11,27 +11,12 @@ void run(std::ostream &out, const std::string& filename)
 
     std::vector<int> distances = g.findShortestWays(-1);
 
-    for (int i = 0; i < distances.size(); i++)
+    for (unsigned i = 0; i < distances.size(); i++)
     {
-        std::cout << distances[i] << " ";
+        out << distances[i] << " ";
     }
-    std::cout << "\n";
+    out << "\n";
 }
-
-
-void testLogic()
-{
-    {
-        const std::string filename = "";
-        Graph g(0);
-        g.getFromFileWithStartVertex(filename);
-
-        std::vector<int> distances = g.findShortestWays(-1);
-        std::vector<int> distances_test = {1, 2, 3, 3, 0};
-        assert(distances == distances_test);
-    }
-}
-
 
 int main(int argc, char *argv[])
 {
