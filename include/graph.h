@@ -1,3 +1,9 @@
+/*!
+* @file
+* @brief Header file with Graph class description
+*
+*/
+
 #ifndef Graph_H
 #define Graph_H
 
@@ -5,6 +11,13 @@
 #include <string>
 
 
+/*!
+ * @brief Graph class
+ *
+ * Graph data structure. Using adjaceny list;
+ *
+ *
+ */
 class Graph {
 private:
     int verticles;

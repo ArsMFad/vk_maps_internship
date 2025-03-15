@@ -1,10 +1,24 @@
+/*!
+* @file
+* @brief Main file
+*/
+
 #include "../include/graph.h"
 
 #include <iostream>
 #include <cassert>
 
 
-void run(std::ostream &out, const std::string& filename)
+/**
+ * @brief Run
+ *
+ * Run function of programm
+ *
+ * @param out Output stream
+ * @param filename Filename for graph input
+ *
+ */
+void run(std::ostream & out, const std::string & filename)
 {
     Graph g(0);
     g.getFromFileWithStartVertex(filename);
@@ -18,6 +32,18 @@ void run(std::ostream &out, const std::string& filename)
     out << "\n";
 }
 
+
+/**
+ * @brief Entry point
+ *
+ * Execution of the program
+ * starts here.
+ *
+ * @param argc Number of arguments
+ * @param argv List of arguments
+ *
+ * @return Program exit status
+ */
 int main(int argc, char *argv[])
 {
     if (argc < 2) {

@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['task_0',['VK Maps internship task',['../index.html',1,'']]]
+];

@@ -1,0 +1,167 @@
+\doxysection{Graph Class Reference}
+\hypertarget{classGraph}{}\label{classGraph}\index{Graph@{Graph}}
+
+
+\doxylink{classGraph}{Graph} class.  
+
+
+
+
+{\ttfamily \#include $<$graph.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classGraph_ae4c72b8ac4d693c49800a4c7e273654f}\label{classGraph_ae4c72b8ac4d693c49800a4c7e273654f} 
+{\bfseries Graph} ()
+\begin{DoxyCompactList}\small\item\em Constructor by default. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph_ac47c886286a43e640423b6d8d4868b29}{Graph}} (int v)
+\begin{DoxyCompactList}\small\item\em Constructor with verticles argument. \end{DoxyCompactList}\item 
+\Hypertarget{classGraph_a902c5b3eacb66d60752525ab23297a95}\label{classGraph_a902c5b3eacb66d60752525ab23297a95} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Graph} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGraph_ad8c10df34357b2cd865c81e0c4f0bd8c}{add\+Edge}} (int u, int v)
+\begin{DoxyCompactList}\small\item\em Adding edge function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGraph_a9e706432a2f7cf90c87c7a59410e8b05}{get\+From\+File\+With\+Start\+Vertex}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Get from file with start vertex. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classGraph_a401d63f9d1223d4b4970be5a20c0d43d}{get\+Neighbors}} (int v) const
+\begin{DoxyCompactList}\small\item\em Get Neighbors. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGraph_ae337cb7c819aeb93f528855a29fafbab}{get\+Start\+Vertex}} () const
+\begin{DoxyCompactList}\small\item\em Get start vertex. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGraph_a33dcfbe6d2ec42e6b781606961caa98d}{print\+Graph}} () const
+\begin{DoxyCompactList}\small\item\em Print graph. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classGraph_af5acff1ebb1f70228c7bab6828281368}{find\+Shortest\+Ways}} (int st) const
+\begin{DoxyCompactList}\small\item\em Find Shortest Ways. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classGraph}{Graph} class. 
+
+\doxylink{classGraph}{Graph} data structure. Using adjaceny list; 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classGraph_ac47c886286a43e640423b6d8d4868b29}\label{classGraph_ac47c886286a43e640423b6d8d4868b29} 
+\index{Graph@{Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{Graph()}{Graph()}}
+{\footnotesize\ttfamily Graph\+::\+Graph (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption})}
+
+
+
+Constructor with verticles argument. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & verticles \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGraph_ad8c10df34357b2cd865c81e0c4f0bd8c}\label{classGraph_ad8c10df34357b2cd865c81e0c4f0bd8c} 
+\index{Graph@{Graph}!addEdge@{addEdge}}
+\index{addEdge@{addEdge}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{addEdge()}{addEdge()}}
+{\footnotesize\ttfamily void Graph\+::add\+Edge (\begin{DoxyParamCaption}\item[{int}]{u,  }\item[{int}]{v }\end{DoxyParamCaption})}
+
+
+
+Adding edge function. 
+
+Function add edge to undirected graph.
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & vertex \\
+\hline
+{\em v} & vertex \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGraph_af5acff1ebb1f70228c7bab6828281368}\label{classGraph_af5acff1ebb1f70228c7bab6828281368} 
+\index{Graph@{Graph}!findShortestWays@{findShortestWays}}
+\index{findShortestWays@{findShortestWays}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{findShortestWays()}{findShortestWays()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ Graph\+::find\+Shortest\+Ways (\begin{DoxyParamCaption}\item[{int}]{st }\end{DoxyParamCaption}) const}
+
+
+
+Find Shortest Ways. 
+
+Running bfs and search shortest ways to all other verticles
+
+
+\begin{DoxyParams}{Parameters}
+{\em st} & start vertex. If st equals -\/1, then st will be start\+\_\+vertex of \doxylink{classGraph}{Graph} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector of distances 
+\end{DoxyReturn}
+\Hypertarget{classGraph_a9e706432a2f7cf90c87c7a59410e8b05}\label{classGraph_a9e706432a2f7cf90c87c7a59410e8b05} 
+\index{Graph@{Graph}!getFromFileWithStartVertex@{getFromFileWithStartVertex}}
+\index{getFromFileWithStartVertex@{getFromFileWithStartVertex}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{getFromFileWithStartVertex()}{getFromFileWithStartVertex()}}
+{\footnotesize\ttfamily void Graph\+::get\+From\+File\+With\+Start\+Vertex (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Get from file with start vertex. 
+
+Reading graph from file as descripted in task. Also getting start vertex from the end of the txt file
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & filename for graph input \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGraph_a401d63f9d1223d4b4970be5a20c0d43d}\label{classGraph_a401d63f9d1223d4b4970be5a20c0d43d} 
+\index{Graph@{Graph}!getNeighbors@{getNeighbors}}
+\index{getNeighbors@{getNeighbors}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{getNeighbors()}{getNeighbors()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ Graph\+::get\+Neighbors (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption}) const}
+
+
+
+Get Neighbors. 
+
+Returning adjacency list row of neighbors
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & vertex \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+adjacency list row 
+\end{DoxyReturn}
+\Hypertarget{classGraph_ae337cb7c819aeb93f528855a29fafbab}\label{classGraph_ae337cb7c819aeb93f528855a29fafbab} 
+\index{Graph@{Graph}!getStartVertex@{getStartVertex}}
+\index{getStartVertex@{getStartVertex}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{getStartVertex()}{getStartVertex()}}
+{\footnotesize\ttfamily int Graph\+::get\+Start\+Vertex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get start vertex. 
+
+Returning start vertex of graph
+
+\begin{DoxyReturn}{Returns}
+vertex 
+\end{DoxyReturn}
+\Hypertarget{classGraph_a33dcfbe6d2ec42e6b781606961caa98d}\label{classGraph_a33dcfbe6d2ec42e6b781606961caa98d} 
+\index{Graph@{Graph}!printGraph@{printGraph}}
+\index{printGraph@{printGraph}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{printGraph()}{printGraph()}}
+{\footnotesize\ttfamily void Graph\+::print\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Print graph. 
+
+Output of graph 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{graph_8h}{graph.\+h}}\item 
+src/\mbox{\hyperlink{graph_8cpp}{graph.\+cpp}}\end{DoxyCompactItemize}
