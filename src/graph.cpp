@@ -22,7 +22,7 @@ void Graph::addEdge(int u, int v)
 }
 
 
-void Graph::getFromFile(const std::string& filename)
+void Graph::getFromFileWithStartVertex(const std::string& filename)
 {
     std::ifstream input(filename);
     if (!input.is_open())
@@ -41,6 +41,18 @@ void Graph::getFromFile(const std::string& filename)
     }
 
     input >> start_vertex;
+}
+
+
+std::vector<int> Graph::getNeighbors(int v) const
+{
+    return adjacenyList[v];
+}
+
+
+int Graph::getStartVertex() const
+{
+    return start_vertex;
 }
 
 
