@@ -9,8 +9,8 @@ GTEST_LIBS = $(GTEST_DIR)/libgtest.a $(GTEST_DIR)/libgtest_main.a
 
 SRC_DIR = src
 GTEST_SRC_DIR = gtest
-OBJ_DIR = bin
-BIN_DIR = bin
+OBJ_DIR = build/obj
+BIN_DIR = build
 INCLUDE_DIR = include
 
 
