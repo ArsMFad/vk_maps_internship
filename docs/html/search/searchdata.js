@@ -3,7 +3,7 @@ var indexSectionsWithContent =
   0: "afgimprtv~",
   1: "g",
   2: "gmt",
-  3: "afgmpr~",
+  3: "afgmprt~",
   4: "imtv"
 };
 

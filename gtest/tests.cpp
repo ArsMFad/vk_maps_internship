@@ -6,7 +6,10 @@
 #include <gtest/gtest.h>
 #include "../include/graph.h"
 
-
+/**
+ * @brief Test how graph works
+ *
+ */
 TEST(GraphTest, AddEdgeTest)
 {
     Graph g(5);
@@ -25,6 +28,10 @@ TEST(GraphTest, AddEdgeTest)
 }
 
 
+/**
+ * @brief Test how graph get data from file
+ *
+ */
 TEST(GraphTest, getFromFileTest)
 {
     Graph g(0);
@@ -42,6 +49,10 @@ TEST(GraphTest, getFromFileTest)
 }
 
 
+/**
+ * @brief Test how bfs algorithm in findShortestWays work
+ *
+ */
 TEST(GraphTest, BFSTest)
 {
     Graph g(5);
