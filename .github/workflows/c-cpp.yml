@@ -20,4 +20,4 @@ jobs:
     - name: make
       run: make
     - name: Run test
-      run: /home/runner/work/vk_maps_internship/vk_maps_internship/build/test
+      run: /home/runner/work/vk_maps_internship/vk_maps_internship/build/tests
